@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+class Encuesta_De_Edades {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int mayoresDeEdad = 0;
+        int menoresDeEdad = 0;
+        int exactamente18 = 0;
+        int edadMayor = 0;
+
+        for (int i = 1; i <= 8; i++) {
+            System.out.print("Ingrese la edad de la persona " + i + ": ");
+            int edad = scanner.nextInt();
+
+            if (edad >= 18) {
+                mayoresDeEdad++;
+            } else {
+                menoresDeEdad++;
+            }
+
+            if (edad == 18) {
+                exactamente18++;
+            }
+
+            if (i == 1 || edad > edadMayor) {
+                edadMayor = edad;
+            }
+        }
+
+        System.out.println();
+        System.out.println("Cantidad de personas mayores de edad: " + mayoresDeEdad);
+        System.out.println("Cantidad de personas menores de edad: " + menoresDeEdad);
+        System.out.println("Cantidad de personas con exactamente 18 anios: " + exactamente18);
+        System.out.println("La edad mayor ingresada es: " + edadMayor);
+
+        scanner.close();
+    }
+}
