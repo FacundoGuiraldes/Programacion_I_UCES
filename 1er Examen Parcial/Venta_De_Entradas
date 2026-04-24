@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+class Venta_De_Entradas {
+    public static void main(String[] args) {
+        final double PRECIO_ENTRADA = 35000;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese la cantidad de entradas que desea comprar: ");
+        int cantidadEntradas = scanner.nextInt();
+
+        double totalSinDescuento = cantidadEntradas * PRECIO_ENTRADA;
+        double descuento = 0;
+        boolean aplicaDescuento = cantidadEntradas > 4;
+
+        if (aplicaDescuento) {
+            descuento = totalSinDescuento * 0.10;
+        }
+
+        double montoFinal = totalSinDescuento - descuento;
+
+        System.out.println();
+        System.out.println("Total sin descuento: $" + totalSinDescuento);
+
+        if (aplicaDescuento) {
+            System.out.println("Se aplico un descuento del 10%.");
+            System.out.println("Descuento: $" + descuento);
+        } else {
+            System.out.println("No se aplico descuento.");
+        }
+
+        System.out.println("Monto final a pagar: $" + montoFinal);
+
+        scanner.close();
+    }
+}
