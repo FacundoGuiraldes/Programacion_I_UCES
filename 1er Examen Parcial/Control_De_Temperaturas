@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+class Control_De_Temperaturas {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese la temperatura del dia 1: ");
+        double temp1 = scanner.nextDouble();
+
+        System.out.print("Ingrese la temperatura del dia 2: ");
+        double temp2 = scanner.nextDouble();
+
+        System.out.print("Ingrese la temperatura del dia 3: ");
+        double temp3 = scanner.nextDouble();
+
+        System.out.print("Ingrese la temperatura del dia 4: ");
+        double temp4 = scanner.nextDouble();
+
+        System.out.print("Ingrese la temperatura del dia 5: ");
+        double temp5 = scanner.nextDouble();
+
+        double mayor = temp1;
+        if (temp2 > mayor) {
+            mayor = temp2;
+        }
+        if (temp3 > mayor) {
+            mayor = temp3;
+        }
+        if (temp4 > mayor) {
+            mayor = temp4;
+        }
+        if (temp5 > mayor) {
+            mayor = temp5;
+        }
+
+        double menor = temp1;
+        if (temp2 < menor) {
+            menor = temp2;
+        }
+        if (temp3 < menor) {
+            menor = temp3;
+        }
+        if (temp4 < menor) {
+            menor = temp4;
+        }
+        if (temp5 < menor) {
+            menor = temp5;
+        }
+
+        double promedio = (temp1 + temp2 + temp3 + temp4 + temp5) / 5;
+
+        int diasMayoresA30 = 0;
+        if (temp1 > 30) {
+            diasMayoresA30++;
+        }
+        if (temp2 > 30) {
+            diasMayoresA30++;
+        }
+        if (temp3 > 30) {
+            diasMayoresA30++;
+        }
+        if (temp4 > 30) {
+            diasMayoresA30++;
+        }
+        if (temp5 > 30) {
+            diasMayoresA30++;
+        }
+
+        System.out.println();
+        System.out.println("Temperatura mayor: " + mayor);
+        System.out.println("Temperatura menor: " + menor);
+        System.out.println("Promedio de temperaturas: " + promedio);
+        System.out.println("Cantidad de dias con temperatura mayor a 30 grados: " + diasMayoresA30);
+
+        scanner.close();
+    }
+}
